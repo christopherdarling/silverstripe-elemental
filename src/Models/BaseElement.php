@@ -177,10 +177,8 @@ class BaseElement extends DataObject
             return $extended;
         }
 
-        if ($this->hasMethod('getPage')) {
-            if ($page = $this->getPage()) {
-                return $page->canView($member);
-            }
+        if ($page = $this->getPage()) {
+            return $page->canView($member);
         }
 
         return (Permission::check('CMS_ACCESS', 'any', $member)) ? true : null;
@@ -200,10 +198,8 @@ class BaseElement extends DataObject
             return $extended;
         }
 
-        if ($this->hasMethod('getPage')) {
-            if ($page = $this->getPage()) {
-                return $page->canEdit($member);
-            }
+        if ($page = $this->getPage()) {
+            return $page->canEdit($member);
         }
 
         return (Permission::check('CMS_ACCESS', 'any', $member)) ? true : null;
@@ -227,10 +223,8 @@ class BaseElement extends DataObject
             return $extended;
         }
 
-        if ($this->hasMethod('getPage')) {
-            if ($page = $this->getPage()) {
-                return $page->canArchive($member);
-            }
+        if ($page = $this->getPage()) {
+            return $page->canArchive($member);
         }
 
         return (Permission::check('CMS_ACCESS', 'any', $member)) ? true : null;
